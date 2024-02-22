@@ -1,0 +1,36 @@
+{% load static %}
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            text-align: center;  /* Aligning text content in the center of table cells */
+        }
+    </style>
+</head>
+<body>
+<CENTER><H3>NAMSKARAM  PRAJALARA 🙏🙏🙏</H3></CENTER>
+
+    <table style="width: 25%; margin: auto;">
+        <tr bgcolor="red">
+            <td>
+                <img src="{% static 'images/kllogo.jpg' %}" alt="KL Logo">
+                <p style="color: white;">ERP AND LMS <P>
+               <p>DEEMED TO BE UNIVERSITY</p>
+
+            </td>
+            <td>WELCOME TO<p style="color:white;">KL POORI WALA <P>🍲🍲🍲🍲</P></p></td>
+
+        </tr>
+    </table>
+
+{% block body %}
+<div>
+    <h1>This is new TTM Homepage</h1>
+</div>
+{% endblock %}
+</body>
+</html>

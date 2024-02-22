@@ -1,0 +1,25 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Print to Console</title>
+
+</head>
+
+<body>
+{% block body %}
+<div>
+    <form method="POST" action="{% url 'print_to_console' %}">
+        {% csrf_token %}
+        <label>Enter text:</label>
+        <input type="text" name="t1" required>
+        <button type="button" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+{% endblock %}
+</body>
+</html>

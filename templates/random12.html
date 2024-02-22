@@ -1,0 +1,38 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body%}
+<div class="container text-center">
+    <div class="row">
+        <div class="col order-last">
+            First in DOM, ordered last
+            {% if result_str %}
+                <br>
+                <strong><center>{{ result_str }}</center></strong>
+            {% endif %}
+            {% if error_message %}
+                <br>
+                <p style="color: red;"><strong>{{ error_message }}</strong></p>
+            {% endif %}
+        </div>
+        <div class="col">
+            Second in DOM, unordered
+            <div>
+                <form method="post" action="{% url 'random12' %}">
+                    {% csrf_token %}
+                    <label>Enter number:</label>
+                    <input type="number" name="input3" placeholder="Ex: 2" required>
+                    <button type="submit" class="btn btn-warning">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

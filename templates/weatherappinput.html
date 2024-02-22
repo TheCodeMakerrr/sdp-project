@@ -1,0 +1,43 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            <form method="post" action="{% url 'weatherappinput' %}">
+                <br><br>
+                <h1>WELCOME TO KIRAN TRAVEL TOURISM AND MANAGEMENT</h1>
+                {% csrf_token %}
+                <h5>
+                    <label>ENTER A CITY NAME</label>
+                    <input type="text" name="place">
+                    <br><br>
+                    <button type="submit" class="btn btn-success btn-lg">Check</button>
+                </h5>
+            </form>
+        </div>
+        <div class="col">
+            <h1>TOP VACATION WEATHER</h1>
+            <br><br>
+            <h1>
+                {% if error_message %}
+                    <p>{{ error_message }}</p>
+                {% else %}
+                    <p>CITY: {{ city }}</p>
+                    <p>TEMPERATURE: {{ temperature1 }} &#8451;</p>
+                    <p>HUMIDITY: {{ humidity }} %</p>
+                {% endif %}
+            </h1>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
